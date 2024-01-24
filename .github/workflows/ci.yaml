@@ -13,10 +13,11 @@ jobs:
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config user.email actions@github.com
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+          fetch-depth: 0
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v3
         with:
@@ -24,5 +25,9 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - run:  pip install mkdocs==1.5.3 \
+              pip install mkdocs-material==9.5.5 \
+              pip install mkdocs-git-revision-date-localized-plugin==1.2.2 \
+              pip install mkdocs-git-committers-plugin-2==2.2.3 \
+              pip install mkdocs-minify-plugin==0.7.2
       - run: mkdocs gh-deploy --force

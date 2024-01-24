@@ -1,3 +1,78 @@
-site_name: My Docs
+site_name: CS-ZIJI-<课程名称> # TODO: 请修改本节配置项
+repo_name: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本节配置项
+repo_url: https://github.com/CS-ZIJI/F-MkDocs-Template # TODO: 请修改本节配置项
+edit_uri: blob/main/docs
+
+copyright: 'Copyright &copy 2023 CS-ZIJI'
+
 theme:
   name: material
+  language: zh
+  features:
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.action.view
+  icon:
+    repo: fontawesome/brands/github-alt
+    edit: material/pencil
+    view: material/eye
+
+markdown_extensions:
+  - toc:
+      permalink: true # 每个标题都有锚点
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - admonition
+  - pymdownx.details # foldable admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+  - git-committers:
+      repository: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本配置项
+      branch: main
+
+extra_css:
+  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
+
+extra_javascript: 
+  - supports/js/katex.js
+  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
+
+# ======================================== >>>
+# TODO: 请修改本节配置项
+
+nav:
+  - "指导页": instructions.md
+  - "封面": index.md
+  - 0-x.md
+
+# ======================================== <<<
+

@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# <课程名称>
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+!!! info "课程基本信息"
 
-## Commands
+    - 课程名称：<课程名称>
+    - 课程代码：<xxxxxx>
+    - 授课老师：<0>、<1>、<2>
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+!!! list "资源目录"
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    - [0.x 导论](0-x.md)
+    - ...

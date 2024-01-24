@@ -1,0 +1,9 @@
+# Editors Files
+.vscode
+.idea
+
+# Desktop Services Store
+.DS_Store
+
+# Static Files
+site/
