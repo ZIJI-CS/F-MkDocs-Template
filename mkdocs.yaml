@@ -60,6 +60,9 @@ plugins:
       branch: main
 
 extra_css:
+  - supports/css/base.css
+  - supports/css/theme.css
+  - supports/css/admonitions.css
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
 
 extra_javascript: 
