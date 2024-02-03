@@ -29,5 +29,6 @@ jobs:
               pip install mkdocs-material==9.5.5 \
               pip install mkdocs-git-revision-date-localized-plugin==1.2.2 \
               pip install mkdocs-git-committers-plugin-2==2.2.3 \
-              pip install mkdocs-minify-plugin==0.7.2
+              pip install mkdocs-minify-plugin==0.7.2 \
+              pip install mkdocs-statistics-plugin==0.1.2
       - run: mkdocs gh-deploy --force
