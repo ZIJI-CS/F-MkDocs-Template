@@ -1,6 +1,6 @@
-site_name: CS-ZIJI-<课程名称> # TODO: 请修改本节配置项
-repo_name: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本节配置项
-repo_url: https://github.com/CS-ZIJI/F-MkDocs-Template # TODO: 请修改本节配置项
+site_name: CS-ZIJI-<课程名称> # TODO: 请修改项配置
+repo_name: CS-ZIJI/F-MkDocs-Template # TODO: 请修改项配置
+repo_url: https://github.com/CS-ZIJI/F-MkDocs-Template # TODO: 请修改项配置
 edit_uri: blob/main/docs
 
 copyright: 'Copyright &copy 2023 CS-ZIJI'
@@ -29,7 +29,7 @@ markdown_extensions:
       permalink: true # 每个标题都有锚点
       slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   - admonition
-  - pymdownx.details # foldable admonition
+  - pymdownx.details # 可折叠的 admonition
   - attr_list
   - footnotes
   - md_in_html
@@ -64,7 +64,7 @@ plugins:
   - search:
       separator: '[\s\-\.]+'
   - git-committers:
-      repository: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本配置项
+      repository: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本项配置
       branch: main
   - statistics:
       words_per_minute: 200
@@ -80,10 +80,9 @@ extra_javascript:
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
 
 # ======================================== >>>
-# TODO: 请修改本节配置项
+# TODO: 请修改本项配置
 
 nav:
-  - "指导页": instructions.md
   - "封面": index.md
   - 0-x.md
 
