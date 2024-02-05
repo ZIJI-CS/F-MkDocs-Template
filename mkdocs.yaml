@@ -1,9 +1,9 @@
-site_name: CS-ZIJI-<课程名称> # TODO: 请修改项配置
-repo_name: CS-ZIJI/F-MkDocs-Template # TODO: 请修改项配置
-repo_url: https://github.com/CS-ZIJI/F-MkDocs-Template # TODO: 请修改项配置
+site_name: CS-ZIJI-<课程名称> # TODO: 请修改项配置，将尖括号内的内容替换为课程名称
+repo_name: CS-ZIJI/F-MkDocs-Template # TODO: 请修改项配置，将其设置为对应的仓库
+repo_url: https://github.com/CS-ZIJI/F-MkDocs-Template # TODO: 请修改项配置，将其设置为对应的仓库的 URL，一般替换后缀即可
 edit_uri: blob/main/docs
 
-copyright: 'Copyright &copy 2023 CS-ZIJI'
+copyright: 'Copyright &copy 2024 CS-ZIJI' # TODO: 请修改项配置，主要就是年份，对的就不用管
 
 theme:
   name: material
@@ -27,10 +27,10 @@ theme:
 
 markdown_extensions:
   - toc:
-      permalink: true # 每个标题都有锚点
+      permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   - admonition
-  - pymdownx.details # 可折叠的 admonition
+  - pymdownx.details
   - attr_list
   - footnotes
   - md_in_html
@@ -65,23 +65,26 @@ plugins:
   - search:
       separator: '[\s\-\.]+'
   - git-committers:
-      repository: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本项配置
+      repository: CS-ZIJI/F-MkDocs-Template # TODO: 请修改本项配置，一般同步于 repo_name 即可（如果主分支不叫 main 也请修改 branch 项）
       branch: main
   - statistics:
       words_per_minute: 200
 
 extra_css:
+  # 如果需要修改主题样式，可以修改 `theme.css`；如果需要修改 admonitions 的主题，可以修改 `admonitions.css`
   - supports/css/base.css
   - supports/css/theme.css
   - supports/css/admonitions.css
+  # 如果公式渲染样式出现问题，请检查如下脚本
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
 
 extra_javascript: 
+  # 如果公式渲染出现问题，请检查如下脚本
   - supports/js/katex.js
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
 
 # ======================================== >>>
-# TODO: 请修改本项配置
+# TODO: 请修改本项配置，本节是导航配置项，一般只需要在下面增加新的章节对应的文件即可，支持结构化配置
 
 nav:
   - "封面": index.md
