@@ -7,6 +7,3 @@
 
 # Static Files
 site/
-
-# Plugin Cache
-.cache
