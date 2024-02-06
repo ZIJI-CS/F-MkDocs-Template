@@ -69,6 +69,7 @@ plugins:
       branch: main
   - statistics:
       words_per_minute: 200
+  - glightbox
 
 extra_css:
   # 如果需要修改主题样式，可以修改 `theme.css`；如果需要修改 admonitions 的主题，可以修改 `admonitions.css`
