@@ -11,7 +11,7 @@ theme:
   features:
     - navigation.tracking
     - navigation.indexes
-    - navigation.sections
+    - navigation.expand
     - navigation.top
     - search.highlight
     - search.share
