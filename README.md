@@ -7,3 +7,7 @@
 ## 关于贡献
 
 如果您有任何关于本项目的建议或意见，又或者是想维护新的课程资源，请考虑提交 Issue 或参考[本页](https://github.com/CS-ZIJI/.github)了解贡献方式！
+
+## 许可
+
+本仓库中的内容使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 进行许可。
