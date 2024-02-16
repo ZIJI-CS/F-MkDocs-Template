@@ -9,7 +9,6 @@ theme:
   name: material
   language: zh
   features:
-    - navigation.tracking
     - navigation.indexes
     - navigation.expand
     - navigation.top
