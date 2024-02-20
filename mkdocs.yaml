@@ -9,6 +9,7 @@ theme:
   name: material
   language: zh
   features:
+    - navigation.tabs
     - navigation.indexes
     - navigation.expand
     - navigation.top
@@ -54,7 +55,6 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-
 plugins:
   - git-revision-date-localized:
       type: datetime
@@ -89,8 +89,11 @@ extra_javascript:
 # TODO: 请修改本项配置，本节是导航配置项，一般只需要在下面增加新的章节对应的文件即可，支持结构化配置
 
 nav:
-  - "封面": index.md
-  - 0-x.md
+  - "Home": "https://cs-ziji.github.io/"
+  - "Main":
+    - index.md
+    - 0-x.md
+  # - "Appendix":
 
 # ======================================== <<<
 
