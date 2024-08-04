@@ -8,5 +8,7 @@
 # Static Files
 site
 
-# Trash
+# Automation Supports
 .trash
+.base_repo
+sync_patch.patch
