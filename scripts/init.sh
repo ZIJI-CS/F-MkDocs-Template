@@ -8,14 +8,17 @@ cd $workDir
 
 # ======
 
-# Step 1: remove useless folder.
+# Step 1: note down the base commit.
+git log -1 --pretty=format:"%H" > .base_commit
+
+# Step 2: remove useless folder.
 mkdir -p .trash  # this file is used to store the trash files.
 mv .cache .trash/dot_cache
 mv .git .trash/dot_git
 echo "[1/2] The \`.cache\` and \`.git\` folders are moved into the \`.trash\` folder. Delete the \`.trash\` folder yourself to confirm no important data are dropped."
 echo "[1/2] 已将 \`.cache\` 和 \`.git\` 文件夹丢弃至 \`.trash\` 文件夹，请手动删除 \`.trash\` 文件夹以确认没有重要数据被丢弃。"
 
-# Step 2: initialize the git repository.
+# Step 1: initialize the git repository.
 git init .
 git add -A
 git commit -m "feat: initialization"
