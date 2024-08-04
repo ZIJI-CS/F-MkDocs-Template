@@ -6,4 +6,7 @@
 .DS_Store
 
 # Static Files
-site/
+site
+
+# Trash
+.trash
