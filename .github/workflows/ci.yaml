@@ -1,4 +1,4 @@
-name: ci 
+name: ci
 on:
   push:
     branches:
@@ -9,27 +9,30 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email actions@github.com
-      - uses: actions/setup-python@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
           fetch-depth: 0
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run:  pip install mkdocs==1.5.3 \
-              pip install mkdocs-material==9.5.5 \
-              pip install mkdocs-git-revision-date-localized-plugin==1.2.2 \
-              pip install mkdocs-git-committers-plugin-2==2.2.3 \
-              pip install mkdocs-minify-plugin==0.7.2 \
-              pip install mkdocs-statistics-plugin==0.1.2 \
-              pip install mkdocs-glightbox==0.3.7
-      - run: mkdocs gh-deploy --force
+
+      - name: Solve Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build
+        run: mkdocs gh-deploy --force
