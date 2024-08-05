@@ -9,12 +9,9 @@ cd $workDir
 # ======
 
 # Step 1: clone base repository.
-if [ -d .base_repo ]; then
-    echo "The \`.base_repo\` folder is occupied. Delete this folder and try again!"
-    echo "已存在 \`.base_repo\` 文件夹，请删除该文件夹后重试！"
-    exit 0
+if [ ! -d ".base_repo" ]; then
+    git clone https://github.com/ZIJI-CS/F-MkDocs-Template.git .base_repo
 fi
-git clone https://github.com/ZIJI-CS/F-MkDocs-Template.git .base_repo
 
 # Step 2: before syncing, storage changes not committed.
 if [ -n "$(git status --porcelain)" ]; then
@@ -23,15 +20,23 @@ if [ -n "$(git status --porcelain)" ]; then
     exit 0
 fi
 
-# Step 3: pack patches according to `.base_commit`.
+# Step 3: update the base repository.
 baseCommitHash=`cat .base_commit`
 cd .base_repo
-git format-patch $baseCommitHash..HEAD -- ":(exclude).cache" --stdout > sync_patch.patch
+git pull  # update the base repository, in case the base repository has been updated
 
-# Step 4: store the latest base commit.
+# Step 4: check if it is up-to-date, if not, cache the latest commit hash.
+if [ "$baseCommitHash" = "$(git log -1 --pretty=format:%H)" ]; then
+    echo "The base repository is up-to-date. No need to sync!"
+    echo "基础仓库已经是最新的，无需同步！"
+    exit 0
+fi
 git log -1 --pretty=format:%H > ../.base_commit_latest
 
-# Step 5: apply patches to the current repository.
+# Step 5: generate the patch.
+git format-patch --stdout $baseCommitHash..HEAD -- ":(exclude).cache" > sync_patch.patch
+
+# Step 6: apply patches to the current repository.
 cd ..
 if ! git apply --reject --whitespace=fix .base_repo/sync_patch.patch; then
     echo "Failed to apply patches. Please check the conflict files and resolve them manually!"
@@ -39,11 +44,10 @@ if ! git apply --reject --whitespace=fix .base_repo/sync_patch.patch; then
     exit 0
 fi
 
-# Step 6: remove the `.base_repo` folder and apply the commit_base.
+# Step 7: update the commit hash.
 mv .base_commit_latest .base_commit
-rm -rf .base_repo
 
-# Step 7: commit the changes.
+# Step 8: commit the changes.
 git add -A
 git commit -m "update: sync base repository"
 
