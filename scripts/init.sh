@@ -26,9 +26,9 @@ echo "[2/2] Already initialized the git repository. Bind the remote repository a
 echo "[2/2] 已完成对本地 git 仓库的初始化，请手动绑定远程仓库。"
 
 echo "There are still several steps to finish the initialization. Check the link below for further instruction!"
-echo "https://cs-ziji.github.io/contribution/#初始化"
+echo "https://ziji-cs.github.io/contribution/#初始化"
 echo "在完成初始化之前，你还有一些步骤需要完成。请参考下方链接。"
-echo "https://cs-ziji.github.io/contribution/#初始化"
+echo "https://ziji-cs.github.io/contribution/#初始化"
 
 # ======
 

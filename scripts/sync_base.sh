@@ -14,7 +14,7 @@ if [ -d .base_repo ]; then
     echo "已存在 \`.base_repo\` 文件夹，请删除该文件夹后重试！"
     exit 0
 fi
-git clone https://github.com/CS-ZIJI/F-MkDocs-Template.git .base_repo
+git clone https://github.com/ZIJI-CS/F-MkDocs-Template.git .base_repo
 
 # Step 2: before syncing, storage changes not committed.
 if [ -n "$(git status --porcelain)" ]; then

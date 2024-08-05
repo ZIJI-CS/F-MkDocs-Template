@@ -1,4 +1,4 @@
-# CS-ZIJI
+# ZIJI-CS
 
 请访问 **About** 中的 URL 来访问网页。
 
@@ -6,7 +6,7 @@
 
 ## 关于贡献
 
-如果您有任何关于本项目的建议或意见，又或者是想维护新的课程资源，请考虑提交 Issue 或参考[本页](https://cs-ziji.github.io/contribution/)了解贡献方式！
+如果您有任何关于本项目的建议或意见，又或者是想维护新的课程资源，请考虑提交 Issue 或参考[本页](https://ziji-cs.github.io/contribution/)了解贡献方式！
 
 ## 许可
 
